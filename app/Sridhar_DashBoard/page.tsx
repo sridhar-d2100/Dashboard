@@ -81,6 +81,7 @@ import { TooltipProvider } from "@radix-ui/react-tooltip"
 
 import { FaGithub } from 'react-icons/fa';
 
+import { FaUser } from 'react-icons/fa';
 
 // import { useRouter } from 'next/router'
 import { useRouter } from 'next/navigation'; // Import useRouter from next/navigation for Server Components
@@ -286,13 +287,14 @@ export default function Dashboard() {
           </div>
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <Button
-                variant="outline"
-                size="icon"
-                className="overflow-hidden rounded-full"
-              >
-               
-              </Button>
+              
+            <Button
+              variant="outline"
+              size="icon"
+              className="overflow-hidden rounded-full"
+            >
+              <FaUser className="text-xl" />
+            </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end">
               <DropdownMenuLabel>My Account</DropdownMenuLabel>
