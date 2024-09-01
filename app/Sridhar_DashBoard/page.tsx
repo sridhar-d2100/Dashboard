@@ -96,6 +96,59 @@ import { FaAws } from 'react-icons/fa';
 import { MdCloud } from 'react-icons/md';
 
 
+
+import { cn } from "@/lib/utils"
+
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+  navigationMenuTriggerStyle,
+} from "@/components/ui/navigation-menu"
+
+
+const components_2: { title: string; href: string; description: string }[] = [
+    {
+      title: "llsnfosnfoksdpfjsdofposd",
+      href: "/docs/primitives/alert-dialog",
+      description:
+        "A modal dialog that interrupts the user with important content and expects a response.",
+    },
+    {
+      title: "Hover Card",
+      href: "/docs/primitives/hover-card",
+      description:
+        "For sighted users to preview content available behind a link.",
+    },
+    {
+      title: "Progress",
+      href: "/docs/primitives/progress",
+      description:
+        "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
+    },
+    {
+      title: "Scroll-area",
+      href: "/docs/primitives/scroll-area",
+      description: "Visually or semantically separates content.",
+    },
+    {
+      title: "Tabs",
+      href: "/docs/primitives/tabs",
+      description:
+        "A set of layered sections of content—known as tab panels—that are displayed one at a time.",
+    },
+    {
+      title: "Tooltip",
+      href: "/docs/primitives/tooltip",
+      description:
+        "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
+    },
+  ]
+
+
 function Data(){
   const githanlder = () => {
     window.location.href = 'https://github.com/sridhar-d2100'; // Replace with your desired external URL 
@@ -229,8 +282,53 @@ function Data(){
   );
 }
 
+const components = [
+  {
+    title: "Dash board",
+    href: "/docs/primitives/alert-dialog",
+    description: "Provide a unified platform for viewing and interpreting various data sources.And  Foster better communication and collaboration among teams and stakeholders.",
+  },
+  {
+    title: "App ",
+    href: "/docs/primitives/hover-card",
+    description: "Streamline the booking process for accommodations, travel, and services.",
+  },
+  {
+    title: "GCP product",
+    href: "/docs/primitives/progress",
+    description: "Provide a scalable and adaptable infrastructure to support varying business needs and growth.",
+  },
+  {
+    title: "AI product",
+    href: "/docs/primitives/scroll-area",
+    description: "Utilize AI and ML to extract actionable insights from data and improve decision-making processes.",
+  },
+  {
+    title: "Centralized website",
+    href: "/docs/primitives/tabs",
+    description: "Optimize operational efficiency and manage business processes effectively through a centralized platform",
+  },
+  {
+    title: "Notification System",
+    href: "/docs/primitives/tooltip",
+    description: "Provide immediate notifications to address critical incidents and manage system alerts effectively.",
+  },
+];
+
 
 export default function Dashboard() {
+  React.useEffect(() => {
+    // Load Google CSE script
+    const script = document.createElement("script");
+    script.src = "https://cse.google.com/cse.js?cx=a1bb213e714ff4ae2"; // Replace with your actual cx
+    script.async = true;
+    document.body.appendChild(script);
+
+    // Clean up script on component unmount
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
     const router = useRouter();
 
     const handleClick = () => {
@@ -255,6 +353,7 @@ export default function Dashboard() {
     const Reverback = () => {
       router.push('/Signup'); // Change '/signin' to your desired route
     };
+    
     
 
 
@@ -338,7 +437,7 @@ export default function Dashboard() {
       <div className="flex flex-col sm:gap-4 sm:py-4 sm:pl-14">
         <header className="sticky top-0 z-30 flex h-14 items-center gap-4 border-b bg-background px-4 sm:static sm:h-auto sm:border-0 sm:bg-transparent sm:px-6">
           <Sheet>
-            <SheetTrigger asChild>
+            <SheetTrigger asChild>  
               <Button size="icon" variant="outline" className="sm:hidden">
                 <PanelLeft className="h-5 w-5" />
                 <span className="sr-only">Toggle Menu</span>
@@ -392,33 +491,94 @@ export default function Dashboard() {
             </SheetContent>
           </Sheet>
           <Breadcrumb className="hidden md:flex">
-            <BreadcrumbList>
-              <BreadcrumbItem>
-                <BreadcrumbLink asChild>
-                  <Link href="#">Software Engineer</Link>
-                </BreadcrumbLink>
-              </BreadcrumbItem>
-              <BreadcrumbSeparator />
-              <BreadcrumbItem>
-                <BreadcrumbLink asChild>
-                  <Link href="#">Data Engineer</Link>
-                </BreadcrumbLink>
-              </BreadcrumbItem>
-              <BreadcrumbSeparator />
-              <BreadcrumbItem>
-                <BreadcrumbPage>
-                Venturing into AI, ML, and Web3</BreadcrumbPage>
-              </BreadcrumbItem>
-            </BreadcrumbList>
-          </Breadcrumb>
-          <div className="relative ml-auto flex-1 md:grow-0">
-            <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
-            <Input
-              type="search"
-              placeholder="Search..."
-              className="w-full rounded-lg bg-background pl-8 md:w-[200px] lg:w-[320px]"
+          <NavigationMenu>
+      <NavigationMenuList>
+        <NavigationMenuItem>
+          <NavigationMenuTrigger>Getting started</NavigationMenuTrigger>
+          <NavigationMenuContent>
+  <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
+    <li className="row-span-3">
+      <NavigationMenuLink asChild>
+        <a
+          className="flex flex-col justify-between rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
+          href="/"
+        >
+          <div className="flex items-center justify-center mb-4">
+            <img
+              src="https://media.licdn.com/dms/image/v2/D5603AQF71Oy3I5uaIg/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1671545683846?e=2147483647&v=beta&t=SVKJGGDspmfOnjksBnjXBJ2ROjSEdf25IuBnN0eXIdM"
+              alt="Profile"
+              className="w-16 h-16 rounded-full border-4 border-gray-300 shadow-lg object-cover"
             />
           </div>
+          <p className="text-sm leading-tight text-muted-foreground">
+            Tech stack agnostic person who loves to understand the business workflow and contribute in terms of software craftsmanship.
+          </p>
+        </a>
+      </NavigationMenuLink>
+    </li>
+    <ListItem href="/docs" title="Introduction">
+      Graduate from Vit University and passed out of 2022 batch
+    </ListItem>
+    <ListItem href="/docs/installation" title="Installation">
+      How to install dependencies and structure your app.
+    </ListItem>
+    <ListItem href="/docs/primitives/typography" title="Typography">
+      Styles for headings, paragraphs, lists...etc
+    </ListItem>
+  </ul>
+</NavigationMenuContent>
+
+        </NavigationMenuItem>
+        <NavigationMenuItem>
+          <NavigationMenuTrigger>Products-POC</NavigationMenuTrigger>
+          <NavigationMenuContent>
+            <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
+              {components.map((component) => (
+                <ListItem
+                  key={component.title}
+                  title={component.title}
+                  href={component.href}
+                >
+                  {component.description}
+                </ListItem>
+              ))}
+            </ul>
+          </NavigationMenuContent>
+        </NavigationMenuItem>
+        {/* <NavigationMenuItem>
+          <NavigationMenuTrigger>components_2</NavigationMenuTrigger>
+          <NavigationMenuContent>
+            <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
+              {components_2.map((component) => (
+                <ListItem
+                  key={component.title}
+                  title={component.title}
+                  href={component.href}
+                >
+                  {component.description}
+                </ListItem>
+              ))}
+            </ul>
+          </NavigationMenuContent>
+        </NavigationMenuItem> */}
+        <NavigationMenuItem>
+          <Link href="#" legacyBehavior passHref>
+            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+              Documentation
+            </NavigationMenuLink>
+          </Link>
+        </NavigationMenuItem>
+      </NavigationMenuList>
+  
+
+     
+    </NavigationMenu>
+            </Breadcrumb>
+          <div className="ml-auto flex items-center space-x-4">
+    <div className="gcse-search"></div>
+    </div>
+    
+          
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               
@@ -442,7 +602,9 @@ export default function Dashboard() {
           </DropdownMenu>
         </header>
         <main className="grid flex-1 items-start gap-4 p-4 sm:px-6 sm:py-0 md:gap-8 lg:grid-cols-3 xl:grid-cols-3">
+
           <div className="grid auto-rows-max items-start gap-4 md:gap-8 lg:col-span-2">
+            
             <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-2 xl:grid-cols-4">
               <Card
                 className="sm:col-span-2" x-chunk="dashboard-05-chunk-0"
@@ -788,3 +950,28 @@ export default function Dashboard() {
   )
 }
 
+const ListItem = React.forwardRef<
+  React.ElementRef<"a">,
+  React.ComponentPropsWithoutRef<"a">
+>(({ className, title, children, ...props }, ref) => {
+  return (
+    <li>
+      <NavigationMenuLink asChild>
+        <a
+          ref={ref}
+          className={cn(
+            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
+            className
+          )}
+          {...props}
+        >
+          <div className="text-sm font-medium leading-none">{title}</div>
+          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+            {children}
+          </p>
+        </a>
+      </NavigationMenuLink>
+    </li>
+  )
+})
+ListItem.displayName = "ListItem"
