@@ -618,7 +618,7 @@ export default function Dashboard() {
                 <CardFooter style={{ display: 'flex' }}>
                 <Button style={{ marginRight: '10px' }} onClick={githanlder}>GitHub</Button>
                 <Button style={{ marginRight: '10px' }} onClick={resumehandler}>Resume</Button>
-                <Button style={{ marginRight: '10px' }} onClick={handleClick}>Data Eng</Button>
+{/*                 <Button style={{ marginRight: '10px' }} onClick={handleClick}>Data Eng</Button> */}
        
               
               </CardFooter>
