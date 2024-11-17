@@ -79,9 +79,9 @@ import {
 } from "@/components/ui/tooltip"
 import { TooltipProvider } from "@radix-ui/react-tooltip"
 
-import { FaGithub } from 'react-icons/fa';
+import { FaGithub } from 'react-icons/fa'
 
-import { FaUser } from 'react-icons/fa';
+import { FaUser } from 'react-icons/fa'
 
 // import { useRouter } from 'next/router'
 import { useRouter } from 'next/navigation'; // Import useRouter from next/navigation for Server Components
@@ -290,7 +290,7 @@ const components = [
   },
   {
     title: "App ",
-    href: "/docs/primitives/hover-card",
+    href: "/Signup/",
     description: "Streamline the booking process for accommodations, travel, and services.",
   },
   {
@@ -517,13 +517,15 @@ export default function Dashboard() {
       </NavigationMenuLink>
     </li>
     <ListItem href="/docs" title="Introduction">
-      Graduate from Vit University and passed out of 2022 batch
+      Graduate from Vit University and passed out of 2022 batch and having =professional experience in data domain.
     </ListItem>
-    <ListItem href="/docs/installation" title="Installation">
-      How to install dependencies and structure your app.
+    <ListItem href="/docs/values" title="Values">
+      Integrity, continuous learning, and collaboration drive my professional and personal growth.
     </ListItem>
-    <ListItem href="/docs/primitives/typography" title="Typography">
-      Styles for headings, paragraphs, lists...etc
+
+
+    <ListItem href="/docs/primitives/typography" title="Hobbies">
+      Reading,Playing out door games
     </ListItem>
   </ul>
 </NavigationMenuContent>
@@ -878,7 +880,7 @@ export default function Dashboard() {
                     <div className="flex items-center justify-between">
                       <dt className="text-muted-foreground">Email</dt>
                       <dd>
-                        <a href="mailto:">sridhar.d2100@gmail.com</a>
+                        <a href="mailto:">sridhar1310d@gmail.com</a>
                       </dd>
                     </div>
                     <div className="flex items-center justify-between">
@@ -894,9 +896,9 @@ export default function Dashboard() {
                   <div className="grid gap-3">
                     <div className="font-semibold">Location</div>
                     <address className="grid gap-0.5 not-italic text-muted-foreground">
-                      <span>No-5,7th Street</span>
-                      <span>Gandhi Road.</span>
-                      <span>Tambaram ,Chennai-45</span>
+                      {/* <span>No-5,7th Street</span>
+                      <span>Gandhi Road.</span> */}
+                      <span>India Chennai</span>
                     </address>
                   </div>
                   {/* <div className="grid auto-rows-max gap-3">
