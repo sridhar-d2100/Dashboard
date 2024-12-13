@@ -285,7 +285,7 @@ function Data(){
 const components = [
   {
     title: "Dash board",
-    href: "/docs/primitives/alert-dialog",
+    href: "/Design",
     description: "Provide a unified platform for viewing and interpreting various data sources.And  Foster better communication and collaboration among teams and stakeholders.",
   },
   {
